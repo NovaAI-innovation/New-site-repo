@@ -746,6 +746,40 @@ button {
     transform: scale(1.05);
 }
 
+/* Full-width merchandise card */
+.platform-card-wide {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    width: 50%;
+    justify-self: center;
+}
+
+.platform-banner {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.platform-banner img {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    filter: brightness(1.1) contrast(1.05);
+    transition: all 0.3s ease;
+}
+
+.platform-card-wide:hover .platform-banner img {
+    transform: scale(1.02);
+}
+
 /* ===========================
    Seductive Gallery Section
    =========================== */
@@ -1582,6 +1616,11 @@ button {
     .lightbox-nav {
         font-size: 2rem;
         padding: 0.5rem;
+    }
+
+    /* Merch card should be full width on tablet/mobile */
+    .platform-card-wide {
+        width: 100%;
     }
 }
 
