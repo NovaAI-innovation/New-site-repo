@@ -754,6 +754,9 @@ button {
     align-items: center;
     width: 50%;
     justify-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--spacing-lg);
 }
 
 .platform-banner {
