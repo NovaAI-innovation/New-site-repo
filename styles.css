@@ -513,19 +513,12 @@ button {
     overflow: hidden;
 }
 
-.about::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('about-background.webp');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.3;
-    z-index: 0;
+/* Home page welcome section fills viewport */
+#home.about {
+    min-height: 100vh;
+    padding: var(--spacing-xl) 0;
 }
+
 
 .about::after {
     content: '';
@@ -1077,26 +1070,27 @@ button {
 .form-row input,
 .form-row select {
     width: 100%;
-    padding: 1rem 1.5rem;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 1.1rem 1.6rem;
+    border: 2px solid rgba(248, 152, 30, 0.4);
+    border-radius: 16px;
+    background: #000000;
     color: var(--text-light);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    backdrop-filter: blur(10px);
-    transition: var(--transition-normal);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
     box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.1);
 }
 
 .form-row input::placeholder {
     color: rgba(244, 229, 212, 0.7);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
     font-weight: 400;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
 }
 
 .form-row select {
@@ -1110,20 +1104,21 @@ button {
 }
 
 .form-row select option {
-    background-color: #1a1a1a;
+    background-color: #000000;
     color: #ffffff;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
     padding: 0.75rem;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .form-row input:focus,
 .form-row select:focus {
     outline: none;
     border-color: var(--accent-gold);
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    background: #000000;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
 }
 
 .form-row-radio {
@@ -1773,12 +1768,6 @@ button {
     letter-spacing: 0.5px;
 }
 
-.form-row input::placeholder,
-.form-row select {
-    font-family: 'Cormorant Garamond', serif;
-    letter-spacing: 0.3px;
-}
-
 .form-row-radio label {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.05rem;
@@ -1911,34 +1900,36 @@ button {
 
 .form-row textarea {
     width: 100%;
-    padding: 1rem 1.5rem;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 1.1rem 1.6rem;
+    border: 2px solid rgba(248, 152, 30, 0.4);
+    border-radius: 16px;
+    background: #000000;
     color: var(--text-light);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    backdrop-filter: blur(10px);
-    transition: var(--transition-normal);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
     resize: vertical;
     min-height: 100px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.1);
 }
 
 .form-row textarea::placeholder {
     color: rgba(244, 229, 212, 0.7);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
     font-weight: 400;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
 }
 
 .form-row textarea:focus {
     outline: none;
     border-color: var(--accent-gold);
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    background: #000000;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
 }
 
 .form-actions {

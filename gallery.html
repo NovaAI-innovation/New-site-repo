@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makayla Moon | Gallery</title>
+    <meta name="description" content="A curated collection of Makayla Moon's exclusive work and photography.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Age Verification Modal -->
+    <div id="age-modal" class="age-modal">
+        <div class="age-modal-content">
+            <h2>Age Verification</h2>
+            <p>This website contains content intended for adults only.</p>
+            <p>Please confirm you are 18 years or older to continue.</p>
+            <div class="age-modal-buttons">
+                <button id="age-confirm" class="btn btn-primary">I am 18+</button>
+                <button id="age-decline" class="btn btn-secondary">Exit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Makayla Moon</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="platforms.html" class="nav-link">Platforms</a></li>
+                <li><a href="https://pgcbgy-5r.myshopify.com/" target="_blank" rel="noopener noreferrer" class="nav-link">Shop</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="book.html" class="nav-link">Book</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+        <div class="container">
+            <h2 class="section-title centered">Gallery</h2>
+            <div class="title-underline centered"></div>
+            <p class="section-subtitle">A curated collection of my work</p>
+            
+            <!-- Gallery Carousel Container -->
+            <div class="gallery-carousel">
+                <button class="carousel-btn carousel-prev" id="carousel-prev" aria-label="Previous image">
+                    <span>❮</span>
+                </button>
+                
+                <div class="gallery-slides">
+                <!-- Gallery Image 1 -->
+                <div class="gallery-slide active">
+                    <img src="Pics for website/DSC08819.webp" alt="Makayla Moon Gallery 1">
+                    <div class="hotspot" data-content="Exclusive Content"></div>
+                    <div class="hotspot" data-content="VIP Preview"></div>
+                    <div class="hotspot" data-content="Private Session"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">🔥</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 2 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/DSC08870.webp" alt="Makayla Moon Gallery 2">
+                    <div class="hotspot" data-content="Premium Access"></div>
+                    <div class="hotspot" data-content="Behind Scenes"></div>
+                    <div class="hotspot" data-content="Custom Request"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">💋</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 3 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/DSC08878.webp" alt="Makayla Moon Gallery 3">
+                    <div class="hotspot" data-content="Live Show"></div>
+                    <div class="hotspot" data-content="Fan Favorites"></div>
+                    <div class="hotspot" data-content="New Releases"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">🔥</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 4 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/DSC08889.webp" alt="Makayla Moon Gallery 4">
+                    <div class="hotspot" data-content="VIP Lounge"></div>
+                    <div class="hotspot" data-content="Private Chat"></div>
+                    <div class="hotspot" data-content="Exclusive Deal"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">💄</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 5 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/DSC08921.webp" alt="Makayla Moon Gallery 5">
+                    <div class="hotspot" data-content="Luxury Content"></div>
+                    <div class="hotspot" data-content="High Quality"></div>
+                    <div class="hotspot" data-content="Unrestricted"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">⚡</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 6 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/DSC08969.webp" alt="Makayla Moon Gallery 6">
+                    <div class="hotspot" data-content="Premium Only"></div>
+                    <div class="hotspot" data-content="Full Access"></div>
+                    <div class="hotspot" data-content="24/7 Available"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">💎</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 7 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/DSC09002.webp" alt="Makayla Moon Gallery 7">
+                    <div class="hotspot" data-content="Exclusive Content"></div>
+                    <div class="hotspot" data-content="VIP Preview"></div>
+                    <div class="hotspot" data-content="Private Session"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">🔥</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 8 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/DSC09012.webp" alt="Makayla Moon Gallery 8">
+                    <div class="hotspot" data-content="Premium Access"></div>
+                    <div class="hotspot" data-content="Behind Scenes"></div>
+                    <div class="hotspot" data-content="Custom Request"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">💋</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 9 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/DSC09086.webp" alt="Makayla Moon Gallery 9">
+                    <div class="hotspot" data-content="Live Show"></div>
+                    <div class="hotspot" data-content="Fan Favorites"></div>
+                    <div class="hotspot" data-content="New Releases"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">🔥</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 10 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/DSC09132.webp" alt="Makayla Moon Gallery 10">
+                    <div class="hotspot" data-content="VIP Lounge"></div>
+                    <div class="hotspot" data-content="Private Chat"></div>
+                    <div class="hotspot" data-content="Exclusive Deal"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">💄</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 11 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/untitledshoot-036.webp" alt="Makayla Moon Gallery 11">
+                    <div class="hotspot" data-content="Luxury Content"></div>
+                    <div class="hotspot" data-content="High Quality"></div>
+                    <div class="hotspot" data-content="Unrestricted"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">⚡</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 12 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/untitledshoot-056-3.webp" alt="Makayla Moon Gallery 12">
+                    <div class="hotspot" data-content="Premium Only"></div>
+                    <div class="hotspot" data-content="Full Access"></div>
+                    <div class="hotspot" data-content="24/7 Available"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">💎</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 13 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/untitledshoot-075-2.webp" alt="Makayla Moon Gallery 13">
+                    <div class="hotspot" data-content="Exclusive Content"></div>
+                    <div class="hotspot" data-content="VIP Preview"></div>
+                    <div class="hotspot" data-content="Private Session"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">🔥</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 14 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/untitledshoot-107.webp" alt="Makayla Moon Gallery 14">
+                    <div class="hotspot" data-content="Premium Access"></div>
+                    <div class="hotspot" data-content="Behind Scenes"></div>
+                    <div class="hotspot" data-content="Custom Request"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">💋</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 15 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/untitledshoot-110.webp" alt="Makayla Moon Gallery 15">
+                    <div class="hotspot" data-content="Live Show"></div>
+                    <div class="hotspot" data-content="Fan Favorites"></div>
+                    <div class="hotspot" data-content="New Releases"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">🔥</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 16 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/untitledshoot-118.webp" alt="Makayla Moon Gallery 16">
+                    <div class="hotspot" data-content="VIP Lounge"></div>
+                    <div class="hotspot" data-content="Private Chat"></div>
+                    <div class="hotspot" data-content="Exclusive Deal"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">💄</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 17 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/untitledshoot-146.webp" alt="Makayla Moon Gallery 17">
+                    <div class="hotspot" data-content="Luxury Content"></div>
+                    <div class="hotspot" data-content="High Quality"></div>
+                    <div class="hotspot" data-content="Unrestricted"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">⚡</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 18 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/untitledshoot-232.webp" alt="Makayla Moon Gallery 18">
+                    <div class="hotspot" data-content="Premium Only"></div>
+                    <div class="hotspot" data-content="Full Access"></div>
+                    <div class="hotspot" data-content="24/7 Available"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">💎</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 19 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/untitledshoot-248.webp" alt="Makayla Moon Gallery 19">
+                    <div class="hotspot" data-content="Exclusive Content"></div>
+                    <div class="hotspot" data-content="VIP Preview"></div>
+                    <div class="hotspot" data-content="Private Session"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">🔥</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 20 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/untitledshoot-260.webp" alt="Makayla Moon Gallery 20">
+                    <div class="hotspot" data-content="Premium Access"></div>
+                    <div class="hotspot" data-content="Behind Scenes"></div>
+                    <div class="hotspot" data-content="Custom Request"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">💋</span>
+                    </div>
+                </div>
+                <!-- Gallery Image 21 -->
+                <div class="gallery-slide">
+                    <img src="Pics for website/_RJF8323-Edit.webp" alt="Makayla Moon Gallery 21">
+                    <div class="hotspot" data-content="Live Show"></div>
+                    <div class="hotspot" data-content="Fan Favorites"></div>
+                    <div class="hotspot" data-content="New Releases"></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">🔥</span>
+                    </div>
+                </div>
+                </div>
+                
+                <button class="carousel-btn carousel-next" id="carousel-next" aria-label="Next image">
+                    <span>❯</span>
+                </button>
+                
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators" id="carousel-indicators"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Makayla Moon Inc. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev">&#8249;</button>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next">&#8250;</button>
+        <img src="" alt="" id="lightbox-image">
+    </div>
+
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
