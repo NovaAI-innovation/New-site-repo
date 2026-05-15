@@ -11,17 +11,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
-<body>
+<body class="editorial-page">
     <!-- Age Verification Modal -->
-    <div id="age-modal" class="age-modal">
+    <div id="age-modal" class="age-modal" role="dialog" aria-modal="true" aria-labelledby="age-modal-title" aria-describedby="age-modal-description">
         <div class="age-modal-content">
-            <h2>Age Verification</h2>
-            <p>This website contains content intended for adults only.</p>
-            <p>Please confirm you are 18 years or older to continue.</p>
+            <div class="age-modal-emblem" aria-hidden="true"><span>18+</span></div>
+            <span class="age-modal-kicker">Private Website</span>
+            <h2 id="age-modal-title">Confirm Legal Age</h2>
+            <p id="age-modal-description" class="age-modal-lead">This website contains explicit adult material intended only for visitors who are 18 years of age or older.</p>
+            <div class="age-modal-details" aria-hidden="true">
+                <span class="age-modal-detail">Age 18+</span>
+                <span class="age-modal-detail">Explicit Content</span>
+                <span class="age-modal-detail">Private Access</span>
+            </div>
+            <p class="age-modal-supporting">Please confirm that you meet the age requirement and that adult content is legal to access in your location before entering.</p>
             <div class="age-modal-buttons">
-                <button id="age-confirm" class="btn btn-primary">I am 18+</button>
+                <button id="age-confirm" class="btn btn-primary">Enter Website</button>
                 <button id="age-decline" class="btn btn-secondary">Exit</button>
             </div>
+            <p class="age-modal-note">You will only need to confirm once on this device.</p>
         </div>
     </div>
 
@@ -47,14 +55,14 @@
     </nav>
 
     <!-- Services Section (placeholder content) -->
-    <section id="services" class="about section">
+    <section id="services" class="about section editorial-section">
         <div class="container">
-            <div class="about-content" style="grid-template-columns: 1fr;">
-                <div class="about-text reveal-delay" style="max-width: 100%;">
-                    <h2 class="section-title" style="text-align: center;">Services</h2>
-                    <div class="title-underline" style="margin: 0 auto;"></div>
+            <div class="about-content editorial-shell editorial-layout">
+                <div class="about-text editorial-prose editorial-prose-full">
+                    <h2 class="section-title editorial-title-centered">Services</h2>
+                    <div class="title-underline editorial-underline-centered"></div>
                     
-                    <h3 style="margin-top: var(--spacing-md); color: var(--accent-gold); font-size: 1.5rem;">Service Offerings</h3>
+                    <h3>Service Offerings</h3>
                         
                         <p style="margin-top: var(--spacing-sm);"><strong>1 hour — Meet & Greet — $500</strong></p>
                         <p style="margin-bottom: var(--spacing-md); color: rgba(255, 255, 255, 0.9);">Perfect for those looking for a brief encounter</p>
@@ -85,7 +93,7 @@
                         
                         <p style="margin-bottom: var(--spacing-md); color: rgba(255, 255, 255, 0.9);">Consideration must be sent in full at time of booking</p>
                         
-                        <h3 style="margin-top: var(--spacing-lg); color: var(--accent-gold); font-size: 1.5rem;">Extended Stays</h3>
+                        <h3>Extended Stays</h3>
                         
                         <p style="margin-top: var(--spacing-sm); margin-bottom: var(--spacing-xs); color: rgba(255, 255, 255, 0.9);"><strong>14 hours — Overnight — $4,400</strong></p>
                         <p style="margin-top: var(--spacing-sm); margin-bottom: var(--spacing-xs); color: rgba(255, 255, 255, 0.9);"><strong>24 hours — Full Night & Day — $5,000</strong></p>
@@ -93,7 +101,7 @@
                         <p style="margin-top: var(--spacing-sm); margin-bottom: var(--spacing-xs); color: rgba(255, 255, 255, 0.9);"><strong>Three Days — $8,000</strong></p>
                         <p style="margin-top: var(--spacing-sm); margin-bottom: var(--spacing-md); color: rgba(255, 255, 255, 0.9);"><strong>Four Days — $9,500</strong></p>
                         
-                        <h3 style="margin-top: var(--spacing-lg); color: var(--accent-gold); font-size: 1.5rem;">Travel</h3>
+                        <h3>Travel</h3>
                         
                         <p style="margin-top: var(--spacing-sm); margin-bottom: var(--spacing-md); color: rgba(255, 255, 255, 0.9);">Edmonton is my home base, but my heart loves to wander. I'd be thrilled to plan a getaway with you…or let our paths cross in your city! Let's see where the adventure takes us.</p>
                         
@@ -122,7 +130,7 @@
                         <p style="margin-bottom: var(--spacing-sm); color: rgba(255, 255, 255, 0.9);">Those solo days? Maybe you're off on a silent hike, I'm deep in a retreat, or we're reconnecting with friends.</p>
                         <p style="margin-bottom: var(--spacing-md); color: rgba(255, 255, 255, 0.9);">Why do I offer this? Because connection shouldn't come with the pressure to be joined at the hip. Time apart can be just as nourishing as time together.</p>
                         
-                        <h3 style="margin-top: var(--spacing-lg); color: var(--accent-gold); font-size: 1.5rem;">Remote Services</h3>
+                        <h3>Remote Services</h3>
                         
                         <p style="margin-top: var(--spacing-sm);"><strong>1 Hour — Phone Date — $300</strong></p>
                         <p style="margin-bottom: var(--spacing-md); color: rgba(255, 255, 255, 0.9);">Miss me? Want to chat & get a little flirty over a phone or video call? I'm waiting.</p>
@@ -134,7 +142,7 @@
                         <p style="margin-bottom: var(--spacing-sm); color: rgba(255, 255, 255, 0.9);">1 selfie</p>
                         <p style="margin-bottom: var(--spacing-md); color: rgba(255, 255, 255, 0.9);">Depending on my energy & availability, you might receive even more. But at the very least, expect a daily dose of ME in your inbox!</p>
                         
-                        <h3 style="margin-top: var(--spacing-lg); color: var(--accent-gold); font-size: 1.5rem;">Deposits and Cancelations</h3>
+                        <h3>Deposits and Cancelations</h3>
                         
                         <p style="margin-top: var(--spacing-sm); margin-bottom: var(--spacing-sm); color: rgba(255, 255, 255, 0.9);">20% deposit for local Edmonton bookings</p>
                         <p style="margin-bottom: var(--spacing-sm); color: rgba(255, 255, 255, 0.9);">50% deposit for all domestic FMTY's</p>
@@ -143,7 +151,7 @@
                         <p style="margin-bottom: var(--spacing-sm); color: rgba(255, 255, 255, 0.9);">Your deposit will not be refunded if you cancel within 24-48 hours of our date, but I can save & apply it to our next date if you'd like to reschedule</p>
                         <p style="margin-bottom: var(--spacing-md); color: rgba(255, 255, 255, 0.9);">50% of your deposit will be refunded if you cancel 3+ days before our scheduled date/trip. Or I can save & apply the rest to our next date if you'd like to reschedule</p>
                         
-                        <h3 style="margin-top: var(--spacing-lg); color: var(--accent-gold); font-size: 1.5rem;">Details & Options</h3>
+                        <h3>Details &amp; Options</h3>
                         
                         <p style="margin-top: var(--spacing-sm);"><strong>Customize Your Session</strong></p>
                         <p style="margin-bottom: var(--spacing-md); color: rgba(255, 255, 255, 0.9);">If you did not see a timeframe that works for you on the list(s) above, just reach out! I am flexible.</p>
@@ -167,7 +175,7 @@
                         <p style="margin-top: var(--spacing-sm);"><strong>Age Discretion</strong></p>
                         <p style="margin-bottom: var(--spacing-md); color: rgba(255, 255, 255, 0.9);">I will not date anyone younger than 21 years old</p>
                         
-                        <h3 style="margin-top: var(--spacing-lg); color: var(--accent-gold); font-size: 1.5rem;">VIP Arrangements</h3>
+                        <h3>VIP Arrangements</h3>
                         
                         <p style="margin-top: var(--spacing-sm); margin-bottom: var(--spacing-md); color: rgba(255, 255, 255, 0.9);">My VIP arrangement options are ideal for those who want to establish a deeper connection with me, on a more regular basis.</p>
                         <p style="margin-bottom: var(--spacing-md); color: rgba(255, 255, 255, 0.9);">Month-to-month basis (or quarterly), and prepaid in advance</p>

@@ -11,17 +11,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
-<body>
+<body class="booking-page">
     <!-- Age Verification Modal -->
-    <div id="age-modal" class="age-modal">
+    <div id="age-modal" class="age-modal" role="dialog" aria-modal="true" aria-labelledby="age-modal-title" aria-describedby="age-modal-description">
         <div class="age-modal-content">
-            <h2>Age Verification</h2>
-            <p>This website contains content intended for adults only.</p>
-            <p>Please confirm you are 18 years or older to continue.</p>
+            <div class="age-modal-emblem" aria-hidden="true"><span>18+</span></div>
+            <span class="age-modal-kicker">Private Website</span>
+            <h2 id="age-modal-title">Confirm Legal Age</h2>
+            <p id="age-modal-description" class="age-modal-lead">This website contains explicit adult material intended only for visitors who are 18 years of age or older.</p>
+            <div class="age-modal-details" aria-hidden="true">
+                <span class="age-modal-detail">Age 18+</span>
+                <span class="age-modal-detail">Explicit Content</span>
+                <span class="age-modal-detail">Private Access</span>
+            </div>
+            <p class="age-modal-supporting">Please confirm that you meet the age requirement and that adult content is legal to access in your location before entering.</p>
             <div class="age-modal-buttons">
-                <button id="age-confirm" class="btn btn-primary">I am 18+</button>
+                <button id="age-confirm" class="btn btn-primary">Enter Website</button>
                 <button id="age-decline" class="btn btn-secondary">Exit</button>
             </div>
+            <p class="age-modal-note">You will only need to confirm once on this device.</p>
         </div>
     </div>
 
@@ -50,9 +58,22 @@
     <section id="book" class="connect section">
         <div class="container">
             <div class="connect-content">
-                <h2 class="section-title centered">Book a Session</h2>
-                <div class="title-underline centered"></div>
-                <p class="section-subtitle">Fill out the form below to request a booking. All information will be kept confidential.</p>
+                <div class="page-shell section-intro">
+                    <span class="section-kicker centered">Private Request</span>
+                    <h2 class="section-title centered">Book a Session</h2>
+                    <div class="title-underline centered"></div>
+                    <p class="section-subtitle">Fill out the form below to request a booking. All information will be kept confidential.</p>
+                </div>
+                <div class="booking-brief">
+                    <div class="booking-brief-card">
+                        <h3>Response Window</h3>
+                        <p>Requests are reviewed privately, with replies typically sent within 24 hours.</p>
+                    </div>
+                    <div class="booking-brief-card">
+                        <h3>What To Include</h3>
+                        <p>Preferred timing, city, date length, and any details that help shape the right experience.</p>
+                    </div>
+                </div>
 
                 <!-- Booking Form -->
                 <form id="booking-form" class="booking-form">

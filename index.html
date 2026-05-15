@@ -11,17 +11,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
-<body>
+<body class="home-page">
     <!-- Age Verification Modal -->
-    <div id="age-modal" class="age-modal">
+    <div id="age-modal" class="age-modal" role="dialog" aria-modal="true" aria-labelledby="age-modal-title" aria-describedby="age-modal-description">
         <div class="age-modal-content">
-            <h2>Age Verification</h2>
-            <p>This website contains content intended for adults only.</p>
-            <p>Please confirm you are 18 years or older to continue.</p>
+            <div class="age-modal-emblem" aria-hidden="true"><span>18+</span></div>
+            <span class="age-modal-kicker">Private Website</span>
+            <h2 id="age-modal-title">Confirm Legal Age</h2>
+            <p id="age-modal-description" class="age-modal-lead">This website contains explicit adult material intended only for visitors who are 18 years of age or older.</p>
+            <div class="age-modal-details" aria-hidden="true">
+                <span class="age-modal-detail">Age 18+</span>
+                <span class="age-modal-detail">Explicit Content</span>
+                <span class="age-modal-detail">Private Access</span>
+            </div>
+            <p class="age-modal-supporting">Please confirm that you meet the age requirement and that adult content is legal to access in your location before entering.</p>
             <div class="age-modal-buttons">
-                <button id="age-confirm" class="btn btn-primary">I am 18+</button>
+                <button id="age-confirm" class="btn btn-primary">Enter Website</button>
                 <button id="age-decline" class="btn btn-secondary">Exit</button>
             </div>
+            <p class="age-modal-note">You will only need to confirm once on this device.</p>
         </div>
     </div>
 
@@ -50,10 +58,19 @@
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
+            <span class="hero-kicker fade-in">Edmonton based</span>
             <h1 class="hero-title fade-in">Makayla Moon</h1>
             <p class="hero-subtitle fade-in-delay">Content Creator, Digital Artist & Adult Companion</p>
             <p class="hero-tagline fade-in-delay-2">Welcome to my world of temptation and exclusive allure</p>
-            <a href="platforms.html" class="btn btn-primary btn-magnetic fade-in-delay-3">Explore My World</a>
+            <div class="hero-actions fade-in-delay-3">
+                <a href="platforms.html" class="btn btn-primary btn-magnetic">Explore My World</a>
+                <a href="book.html" class="btn btn-secondary">Request a Booking</a>
+            </div>
+            <div class="hero-notes fade-in-delay-3">
+                <span>Exclusive platforms</span>
+                <span>Private bookings</span>
+                <span>Curated gallery</span>
+            </div>
         </div>
         <div class="scroll-indicator">
             <span></span>

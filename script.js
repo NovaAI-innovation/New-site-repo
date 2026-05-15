@@ -2,23 +2,106 @@
 // Age Verification
 // ===========================
 
+const repairTextEncoding = () => {
+    const replacements = new Map([
+        ['â€”', '—'],
+        ['â€“', '–'],
+        ['â€¦', '…'],
+        ['Ã©', 'é'],
+        ['â€™', "'"],
+        ['â€œ', '"'],
+        ['â€', '"'],
+        ['â®', '❮'],
+        ['â¯', '❯'],
+        ['â†‘', '↑'],
+        ['ðŸ”¥', '🔥'],
+        ['ðŸ’‹', '💋'],
+        ['ðŸ’„', '💄'],
+        ['ðŸ’Ž', '💎'],
+        ['âš¡', '⚡']
+    ]);
+
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const textNodes = [];
+
+    while (walker.nextNode()) {
+        textNodes.push(walker.currentNode);
+    }
+
+    textNodes.forEach(node => {
+        let nextValue = node.nodeValue;
+
+        replacements.forEach((replacement, broken) => {
+            if (nextValue.includes(broken)) {
+                nextValue = nextValue.split(broken).join(replacement);
+            }
+        });
+
+        if (nextValue !== node.nodeValue) {
+            node.nodeValue = nextValue;
+        }
+    });
+};
+
+repairTextEncoding();
+
 const ageModal = document.getElementById('age-modal');
 const ageConfirm = document.getElementById('age-confirm');
 const ageDecline = document.getElementById('age-decline');
 
 if (ageModal && ageConfirm && ageDecline) {
+    const focusableElements = [ageConfirm, ageDecline];
+    const trapAgeModalFocus = event => {
+        if (event.key !== 'Tab' || focusableElements.length === 0) {
+            return;
+        }
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (event.shiftKey && document.activeElement === firstElement) {
+            event.preventDefault();
+            lastElement.focus();
+        } else if (!event.shiftKey && document.activeElement === lastElement) {
+            event.preventDefault();
+            firstElement.focus();
+        }
+    };
+
+    const showAgeGate = () => {
+        ageModal.classList.remove('hidden', 'is-leaving');
+        document.body.classList.add('age-gate-open');
+        document.addEventListener('keydown', trapAgeModalFocus);
+
+        window.requestAnimationFrame(() => {
+            ageConfirm.focus();
+        });
+    };
+
+    const hideAgeGate = () => {
+        ageModal.classList.add('is-leaving');
+        document.body.classList.remove('age-gate-open');
+        document.removeEventListener('keydown', trapAgeModalFocus);
+
+        window.setTimeout(() => {
+            ageModal.classList.add('hidden');
+            ageModal.classList.remove('is-leaving');
+        }, 220);
+    };
+
     // Check if user has already verified age
     const hasVerifiedAge = localStorage.getItem('ageVerified');
 
     if (hasVerifiedAge === 'true') {
         ageModal.classList.add('hidden');
+        document.body.classList.remove('age-gate-open');
     } else {
-        ageModal.classList.remove('hidden');
+        showAgeGate();
     }
 
     ageConfirm.addEventListener('click', () => {
         localStorage.setItem('ageVerified', 'true');
-        ageModal.classList.add('hidden');
+        hideAgeGate();
     });
 
     ageDecline.addEventListener('click', () => {
@@ -34,6 +117,16 @@ const nav = document.getElementById('nav');
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+
+    if (href && !href.startsWith('http') && href === currentPage) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+    }
+});
 
 // Sticky navigation on scroll
 if (nav) {
@@ -66,23 +159,21 @@ if (navToggle && navMenu) {
 
 const revealElements = document.querySelectorAll('.reveal, .reveal-delay, .reveal-delay-2');
 
-const revealOnScroll = () => {
-    const triggerBottom = window.innerHeight * 0.85;
-    
-    revealElements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        
-        if (elementTop < triggerBottom) {
-            element.classList.add('active');
-        }
+if (revealElements.length > 0) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.16,
+        rootMargin: '0px 0px -10% 0px'
     });
-};
 
-// Initial check on page load
-revealOnScroll();
-
-// Check on scroll
-window.addEventListener('scroll', revealOnScroll);
+    revealElements.forEach(element => revealObserver.observe(element));
+}
 
 // ===========================
 // Gallery Carousel
@@ -382,15 +473,31 @@ images.forEach(img => imageObserver.observe(img));
 // ===========================
 
 const hero = document.querySelector('.hero');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallaxSpeed = 0.5;
-    
-    if (hero && scrolled < window.innerHeight) {
-        hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
-    }
-});
+if (hero && !prefersReducedMotion.matches) {
+    let ticking = false;
+
+    const updateHeroParallax = () => {
+        const scrolled = window.pageYOffset;
+        const parallaxOffset = Math.min(scrolled * 0.16, 60);
+
+        if (scrolled < window.innerHeight * 1.2) {
+            hero.style.setProperty('--hero-parallax', `${parallaxOffset}px`);
+        }
+
+        ticking = false;
+    };
+
+    updateHeroParallax();
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(updateHeroParallax);
+            ticking = true;
+        }
+    }, { passive: true });
+}
 
 // ===========================
 // Smooth Scroll to Top
@@ -399,8 +506,8 @@ window.addEventListener('scroll', () => {
 // Add a scroll to top button
 const createScrollTopButton = () => {
     const button = document.createElement('button');
-    button.innerHTML = '↑';
     button.className = 'scroll-top-btn';
+    button.innerHTML = '&uarr;';
     button.setAttribute('aria-label', 'Scroll to top');
     
     button.style.cssText = `
@@ -410,16 +517,16 @@ const createScrollTopButton = () => {
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        background: linear-gradient(135deg, rgba(248, 152, 30, 0.92), rgba(173, 94, 23, 0.92));
         color: var(--text-light);
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         border: none;
         cursor: pointer;
         opacity: 0;
         visibility: hidden;
-        transition: all 0.3s ease;
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
         z-index: 999;
-        box-shadow: 0 4px 15px rgba(45, 27, 61, 0.3);
+        box-shadow: 0 18px 35px rgba(98, 43, 5, 0.28);
     `;
     
     document.body.appendChild(button);

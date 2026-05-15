@@ -11,17 +11,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
-<body>
+<body class="editorial-page">
     <!-- Age Verification Modal -->
-    <div id="age-modal" class="age-modal">
+    <div id="age-modal" class="age-modal" role="dialog" aria-modal="true" aria-labelledby="age-modal-title" aria-describedby="age-modal-description">
         <div class="age-modal-content">
-            <h2>Age Verification</h2>
-            <p>This website contains content intended for adults only.</p>
-            <p>Please confirm you are 18 years or older to continue.</p>
+            <div class="age-modal-emblem" aria-hidden="true"><span>18+</span></div>
+            <span class="age-modal-kicker">Private Website</span>
+            <h2 id="age-modal-title">Confirm Legal Age</h2>
+            <p id="age-modal-description" class="age-modal-lead">This website contains explicit adult material intended only for visitors who are 18 years of age or older.</p>
+            <div class="age-modal-details" aria-hidden="true">
+                <span class="age-modal-detail">Age 18+</span>
+                <span class="age-modal-detail">Explicit Content</span>
+                <span class="age-modal-detail">Private Access</span>
+            </div>
+            <p class="age-modal-supporting">Please confirm that you meet the age requirement and that adult content is legal to access in your location before entering.</p>
             <div class="age-modal-buttons">
-                <button id="age-confirm" class="btn btn-primary">I am 18+</button>
+                <button id="age-confirm" class="btn btn-primary">Enter Website</button>
                 <button id="age-decline" class="btn btn-secondary">Exit</button>
             </div>
+            <p class="age-modal-note">You will only need to confirm once on this device.</p>
         </div>
     </div>
 
@@ -47,14 +55,14 @@
     </nav>
 
     <!-- Etiquette Section -->
-    <section id="etiquette" class="about section">
+    <section id="etiquette" class="about section editorial-section">
         <div class="container">
-            <div class="about-content" style="grid-template-columns: 1fr;">
-                <div class="about-text reveal-delay" style="max-width: 100%;">
-                    <h2 class="section-title" style="text-align: center;">Companion Etiquette</h2>
-                    <div class="title-underline" style="margin: 0 auto;"></div>
+            <div class="about-content editorial-shell editorial-layout">
+                <div class="about-text editorial-prose editorial-prose-full">
+                    <h2 class="section-title editorial-title-centered">Companion Etiquette</h2>
+                    <div class="title-underline editorial-underline-centered"></div>
                     
-                    <h3 style="margin-top: var(--spacing-md); color: var(--accent-gold); font-size: 1.5rem;">Scheduling a Date</h3>
+                    <h3>Scheduling a Date</h3>
                     
                     <p style="margin-top: var(--spacing-sm); margin-bottom: var(--spacing-md); color: rgba(255, 255, 255, 0.9);">To reserve time together, please complete my booking form or reach out via email!</p>
                     
@@ -62,7 +70,7 @@
                     
                     <p style="margin-bottom: var(--spacing-md); color: rgba(255, 255, 255, 0.9);">Once we've completed the screening process and deposit, I'll be happy to share my phone number with you, and we can continue our communication there if you'd like.</p>
                     
-                    <h3 style="margin-top: var(--spacing-lg); color: var(--accent-gold); font-size: 1.5rem;">Things to Know Before We Meet</h3>
+                    <h3>Things to Know Before We Meet</h3>
                     
                     <p style="margin-top: var(--spacing-sm); margin-bottom: var(--spacing-md); color: rgba(255, 255, 255, 0.9);">Please provide my consideration (preferably in $100 bills) in an unsealed envelope placed in a visible location within the first 5 minutes of your arrival, so we can enjoy our time together without interruption. I may step away briefly to verify it.</p>
                     
@@ -80,7 +88,7 @@
                     
                     <p style="margin-top: var(--spacing-sm); margin-bottom: var(--spacing-md); color: rgba(255, 255, 255, 0.9);">Consent and consideration are very important to me. When you respect my boundaries, we'll have an incredible time together!</p>
                     
-                    <h3 style="margin-top: var(--spacing-lg); color: var(--accent-gold); font-size: 1.5rem;">Companion Overnight & Travel Etiquette</h3>
+                    <h3>Companion Overnight &amp; Travel Etiquette</h3>
                     
                     <p style="margin-top: var(--spacing-sm); margin-bottom: var(--spacing-md); color: rgba(255, 255, 255, 0.9);"><strong>Overnights</strong></p>
                     
