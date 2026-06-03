@@ -999,9 +999,13 @@ button {
 }
 
 .editorial-page .nav {
-    background: rgba(8, 8, 8, 0.82);
+    background: linear-gradient(180deg, rgba(5, 5, 5, 0.7), transparent);
+}
+
+.editorial-page .nav.scrolled {
+    background: rgba(10, 10, 10, 0.78);
     backdrop-filter: blur(18px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .editorial-section {
