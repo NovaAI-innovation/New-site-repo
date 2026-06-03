@@ -143,36 +143,16 @@ if (nav) {
 if (navToggle && navMenu) {
     navToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
     });
 
     // Close mobile menu when clicking a link
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
         });
     });
-}
-
-// ===========================
-// Scroll Reveal Animation
-// ===========================
-
-const revealElements = document.querySelectorAll('.reveal, .reveal-delay, .reveal-delay-2');
-
-if (revealElements.length > 0) {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.16,
-        rootMargin: '0px 0px -10% 0px'
-    });
-
-    revealElements.forEach(element => revealObserver.observe(element));
 }
 
 // ===========================
@@ -507,41 +487,20 @@ if (hero && !prefersReducedMotion.matches) {
 const createScrollTopButton = () => {
     const button = document.createElement('button');
     button.className = 'scroll-top-btn';
-    button.innerHTML = '&uarr;';
+    button.innerHTML = '↑';
     button.setAttribute('aria-label', 'Scroll to top');
-    
-    button.style.cssText = `
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, rgba(248, 152, 30, 0.92), rgba(173, 94, 23, 0.92));
-        color: var(--text-light);
-        font-size: 1.3rem;
-        border: none;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-        z-index: 999;
-        box-shadow: 0 18px 35px rgba(98, 43, 5, 0.28);
-    `;
-    
+
     document.body.appendChild(button);
-    
+
     // Show/hide button based on scroll position
     window.addEventListener('scroll', () => {
         if (window.scrollY > 500) {
-            button.style.opacity = '1';
-            button.style.visibility = 'visible';
+            button.classList.add('visible');
         } else {
-            button.style.opacity = '0';
-            button.style.visibility = 'hidden';
+            button.classList.remove('visible');
         }
-    });
-    
+    }, { passive: true });
+
     // Scroll to top on click
     button.addEventListener('click', () => {
         window.scrollTo({
